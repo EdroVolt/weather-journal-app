@@ -1,5 +1,5 @@
 /* Global Variables */
-const key = 'b102c647162b25869a19bc8dc30fbb25';
+const apiKey = 'b102c647162b25869a19bc8dc30fbb25&units=imperial';
 let zipCode = '';
 const url = 'http://api.openweathermap.org/data/2.5/weather?';
 
@@ -60,7 +60,7 @@ function getWetherHandler() {
     zipCode = document.querySelector('#zip').value
 
     const userResponse = document.querySelector('#feelings').value;
-    getData(`${url}zip=${zipCode}&appid=${key}`)
+    getData(`${url}zip=${zipCode}&appid=${apiKey}`)
         .then((newData) => {
             postData('/data', {
                 temperature: newData.main.temp,
